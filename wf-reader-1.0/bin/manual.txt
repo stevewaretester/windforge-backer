@@ -1,0 +1,38 @@
+A few basic things:
+
+ * all commands are written in the form (command) or (command parameter1 parameter2)
+
+ * all filenames MUST use either forward slash (/) or double backslash (\\) as a directory seperator
+   (trust me, windows will understand what you mean)
+
+these are a result of the programming language I used, and the fact that I haven't put any
+time into the user interface yet. the easiest way to use this, if you have a different
+Steam directory, is to run the commands:
+	(set-dir "C:\\[mysteamfolder]\\SteamApps\\common\\Windforge\\Data\\BIG.FILE")
+	(extract-all)
+if you'd like to extract the files anywhere else, read on
+
+
+available commands:
+(set-dir [path])
+	sets the working directory to something other than the default. use this
+	if your steam is installed somewhere other than the default location.
+
+ex: (set-dir "C:\\things\\install\\Steam\\SteamApps\\common\\Windforge\\Data\\BIG.FILE")
+
+(extract-all [file path] [extract path])
+	extracts the contents of the data file found at [file path], and puts them
+	at the directory specified by [extract path]. if no [extract path] is given,
+	the files will be extracted to the same directory as the [file path]. if no
+	[file path] is given, it will assume the default location. if you want to
+	extract from the default location, but to a different place, use
+	(extract-all *wf-default* [extract path]) instead.
+ex: (extract-all "C:\\things\\install\\Steam\\SteamApps\\common\\Windforge\\Data\\BIG.FILE" "C:\\work\\files\\")
+    (extract-all "D:\\Steam\\SteamApps\\common\\Windforge\\Data\\BIG.FILE")
+    (extract-all *wf-default* "C:\\work\\files\\")
+
+
+(load-wf-data [path])
+	loads the wf-header for the specified file into memory so it can be manipulated.
+	unless you know what you are doing, you probably don't need to do this.
+	[path] is optional.
