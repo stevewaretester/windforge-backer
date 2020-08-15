@@ -51,5 +51,5 @@ Now check your quest log and see the new quests!
 
 Have fun with the items! (The boots are Overpowered...)
 
-teh_steve
-(github.com/tehsteve/windforge-backer)
+stevewaretester
+(github.com/stevewaretester/windforge-backer)
